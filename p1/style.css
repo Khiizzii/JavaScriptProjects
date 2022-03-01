@@ -60,6 +60,10 @@ h2 {
   outline-color: rgb(43, 103, 110);
 }
 .form-control.success input {
+  /* Styling by two classes on same element(input) i.e.: 
+  1- .form-control on input (that is defined earlier after .form-control label)
+  2- then .success is added to it like form-control success on input element */
+
   /*border-color: limegreen;*/
   border-color: var(--success-color);
 }

@@ -55,7 +55,7 @@ function checkEmail(input) {
 }
 // Function to get id of input fields in proper case
 function getFieldId(input){
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1); //charAt is used to get particular alphabet of string
 }
 
 form.addEventListener('submit',function(e){
