@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: slategrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.movie-container {
+  margin: 10px 0px; /* top&bottom left&right other way of giving same dimensions to two directions*/
+}
+
+.movie-container label {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.movie-container select {
+  background-color: white;
+  border: 0;
+  border-radius: 5px;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  margin: 10px 10px;
+  padding: 5px 15px 5px 15px; /* top right bottom left (another way of gives all dimensions) */
+  width: 100%;
+  appearance: none; /* for cross-browser support */
+  -moz-appearance: none; /*to appear padding on all browsers*/
+  -webkit-appearance: none;
+}
+
+.seat {
+  background-color: white;
+  height: 12px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: aqua;
+}
+
+.seat.occupied {
+  background-color: darkgray;
+}
+
+.seat:nth-of-type(2) {
+  /*psuedo selector for 2nd seat of every row*/
+  margin-right: 20px;
+}
+
+.seat:nth-last-of-type(2) {
+  /*psuedo selector for 2nd last seat of every row*/
+  margin-left: 20px;
+}
+
+.seat:not(.occupied):hover {
+  /*psuedo selector for available seats*/
+  cursor: pointer;
+  /* height: 15px;
+  width: 18px; using transform instead */
+  transform: scale(1.2); /* 1 for 100% */
+}
+
+/*to exempt hover effect from legend*/
+.legend .seat:not(.occupied):hover {
+  /*Another way of styling: Using two different classes of two different elements by spacing b/w them i.e.:
+  .legend .seat which are classes of ul and div inside it respectively */
+  cursor: default;
+  transform: scale(1);
+}
+
+.row {
+  display: flex;
+}
+
+.legend {
+  background-color: rgba(0, 0, 0, 0.1); /*giving transparent color*/
+  display: flex;
+  justify-content: space-between; /*to evenly distribute spaces b/w all elements*/
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: lightgray;
+  list-style-type: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+li small {
+  margin-left: 5px;
+}
+
+.screen {
+  background-color: white;
+  height: 70px;
+  width: 100%;
+  margin: 10px 0px;
+  transform: rotateX(-45deg); /*to give 3D effect to screen*/
+  box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.7); /*h & v offset values, blur, and color */
+}
+
+.container {
+  perspective: 300px;
+  /* Perspective property is used to give a 3D-positioned element some perspective.
+  The perspective property defines how far the object is away from the user. 
+  So, a lower value will result in a more intensive 3D effect than a higher value.*/
+  margin-bottom: 20px;
+}
+
+p.text {
+  margin: 5px 0;
+}
+.text span {
+  color: aqua;
+}
